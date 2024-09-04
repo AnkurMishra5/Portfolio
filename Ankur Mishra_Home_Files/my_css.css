@@ -221,3 +221,53 @@ h4 {
   transform: translateY(-2px) scale(1.05);
   transition: all 0.2s ease-in-out;
 }
+
+/* Contact Form Styles */
+
+.docs-section#contact {
+  padding: 40px 0;
+}
+
+.docs-section#contact h4 {
+  margin-top: 0;
+}
+
+.docs-section#contact form {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.docs-section#contact label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.docs-section#contact input[type="text"], .docs-section#contact input[type="email"], .docs-section#contact textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+}
+
+.docs-section#contact input[type="submit"] {
+  text-align: center;
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.docs-section#contact input[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+.docs-section#contact textarea {
+  height: 100px;
+  resize: vertical;
+}
