@@ -428,7 +428,7 @@
 <div class="docs-section" id="contact">
   <h4>Contact</h4>
 
-  <form>
+  <form id="submit-to-google-sheet" action="https://script.google.com/macros/s/AKfycbxc6Tszz2Pc4ZffdFWIERZXq5rpOdWWEaPJuNA4w35Flq6RF25IIoi3zOMEZ5lMLgZn4g/exec" method="post">
     <label for="name">Name:</label>
     <input type="text" id="name" name="name"><br><br>
 
@@ -440,7 +440,46 @@
 
     <input type="submit" value="Send Message">
   </form>
+  <p id="msg"></p>
+
+  <script>
+    const form = document.getElementById('submit-to-google-sheet');
+    const msgElement = document.getElementById('msg');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault(); // Prevent the default form submission
+
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+
+      // Send the form data to the Google Apps Script
+      fetch('https://script.google.com/macros/s/AKfycbxc6Tszz2Pc4ZffdFWIERZXq5rpOdWWEaPJuNA4w35Flq6RF25IIoi3zOMEZ5lMLgZn4g/exec', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: `name=${name}&email=${email}&message=${message}`
+      })
+      .then((response) => response.text())
+      .then((data) => console.log(data))
+      .catch((error) => console.error(error));
+
+      // Display a confirmation message
+      msgElement.innerHTML = `
+        <p>Thank you for submitting the form, ${name}!</p>
+        <p>We will get back to you at ${email} as soon as possible.</p>
+      `;
+
+      // Clear the form fields
+      document.getElementById('name').value = '';
+      document.getElementById('email').value = '';
+      document.getElementById('message').value = '';
+    });
+  </script>
 </div>
+
+<!-- ... (rest of the HTML file remains the same) ... -->
 
 
 
