@@ -216,7 +216,17 @@ h4 {
   transition: all 0.2s ease-in-out;
 }
 
-.my-linkedinlogo:hover, .my-githublogo:hover {
+.my-twitterlogo {
+  background-color: black;
+  mask-image: url('https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/twitter.svg');
+  mask-size: 20px 20px;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  display: inline-block;
+  transition: all 0.2s ease-in-out;
+}
+.my-linkedinlogo:hover, .my-githublogo:hover, .my-twitterlogo:hover {
   background-color: #ADD8E6; /* light blue color */
   transform: translateY(-2px) scale(1.05);
   transition: all 0.2s ease-in-out;
